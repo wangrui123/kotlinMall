@@ -11,7 +11,7 @@ import org.jetbrains.anko.toast
 class RegisterActivity : BaseMvpActivity<RegisterPresenter>(), RegisterView {
 
     override fun requstView(boolean: Boolean) {
-        toast("你好吗" + boolean)
+        toast("我不是很好哦" + boolean)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
