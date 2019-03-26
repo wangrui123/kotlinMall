@@ -17,6 +17,7 @@ fun <T> Observable<T>.excute(subscriber: BaseSubscriber<T>) {
             .subscribeOn(Schedulers.io())
 //            .compose(lifecycleProvider.bindToLifecycle())
             .subscribe(subscriber)
+    
 }
 
 
