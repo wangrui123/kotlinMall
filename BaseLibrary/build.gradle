@@ -20,6 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //添加Java的编译路径, 在main中创建kotlin文件夹, 用于存放kotlin代码(建议) 如果将.kt文件放到kotlin文件夹，又不指定java的编译路径，就会找不到类了.
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -28,10 +33,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api 'com.android.support:appcompat-v7:27.1.1'
-
-    api "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
     api "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
     api "org.jetbrains.anko:anko-commons:$anko_version"
+    api "io.reactivex.rxjava2:rxkotlin:$rx_kotlin_version"
+    api "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+    api "com.trello:rxlifecycle-kotlin:$rx_lifecycle_version"
+    api "com.trello:rxlifecycle-components:$rx_lifecycle_version"
+}
+repositories {
+    mavenCentral()
 }
 
