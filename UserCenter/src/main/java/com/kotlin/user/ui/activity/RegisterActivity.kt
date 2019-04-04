@@ -1,7 +1,6 @@
 package com.kotlin.user.ui.activity
 
 import android.os.Bundle
-import android.view.ViewGroup
 import com.kotlin.base.ui.activity.BaseMvpActivity
 import com.kotlin.user.R
 import com.kotlin.user.presenter.RegisterPresenter
@@ -23,10 +22,9 @@ class RegisterActivity : BaseMvpActivity<RegisterPresenter>(), RegisterView {
         mPresenter = RegisterPresenter()
         mPresenter.mView = this
 
-        textView.setOnClickListener {
-            mPresenter.register("", "", "")
+        mRegisterBtn.setOnClickListener {
+            mPresenter.register(mMobileEt.text.toString(), mVerifyCodeEt.text.toString(), mPwdEt.text.toString())
         }
-
     }
 }
 

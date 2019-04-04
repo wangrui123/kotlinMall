@@ -7,8 +7,6 @@ import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 //Kotlin通用扩展
-
-
 /*
     扩展Observable执行
  */
@@ -17,7 +15,7 @@ fun <T> Observable<T>.excute(subscriber: BaseSubscriber<T>) {
             .subscribeOn(Schedulers.io())
 //            .compose(lifecycleProvider.bindToLifecycle())
             .subscribe(subscriber)
-    
+
 }
 
 
